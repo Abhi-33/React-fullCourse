@@ -26,21 +26,21 @@ export default function TextForm(props) {
     // setText("New Text"); //Correct way of changing or updating the state
   return (
     <>
-    <div className='container'>
+    <div className='container' style={{color :props.mode === 'dark' ? 'white' : 'black'}}>
         <h1>{props.heading}</h1>
   <div className="mb-3">
-    <textarea className="form-control" value={Text} onChange={convertonChange} id="myBox" rows= "10"></textarea>
+    <textarea className="form-control" value={Text} style={{backgroundColor :props.mode === 'dark' ? '#212529' : 'white' ,color :props.mode === 'dark' ? 'white' : 'black'}} onChange={convertonChange} id="myBox" rows= "10"></textarea>
     </div>
     <button className="btn btn-primary mx-1" onClick={convertUP}>Convert to Uppercase</button>
     <button className="btn btn-primary mx-1" onClick={convertLO}>Convert to lowerrcase</button>
     <button className="btn btn-primary mx-1" onClick={clearText}>Clear Text</button>
   </div>
-  <div className="container my-3">
+  <div className="container my-3" style={{color :props.mode === 'dark' ? 'white' : 'black'}}>
     <h2>Your Text Summary</h2>
     <p><b>{Text.split(" ").length}words and {Text.length} characters</b></p>
     <p>{0.008 * Text.split(" ").length} Minutes to read</p>
     <h2>Preview</h2>
-    <p>{Text}</p>
+    <p>{Text.length>0?Text : 'Enter something above to preview it here'}</p>
   </div>
   </>
   )
