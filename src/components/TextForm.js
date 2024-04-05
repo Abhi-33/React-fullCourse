@@ -17,6 +17,17 @@ export default function TextForm(props) {
     const convertonChange =(event)=>{
         setText(event.target.value);
     }
+
+    const handleCopy = ()=>{
+      console.log("I am Copy");
+      var text = document.getElementById('myBox');
+      text.select();
+      text.setSelectionRange(0,9999);
+      navigator.clipboard.writeText(text.value);
+    }
+
+
+
     const [Text, setText] = useState('Enter Text here : ');
     // Text = "New Text"; //Wrong way to Change the Text or state
     // setText("New Text"); //Correct way of changing or updating the state
@@ -29,6 +40,7 @@ export default function TextForm(props) {
     </div>
     <button className="btn btn-primary mx-1" onClick={convertUP}>Convert to Uppercase</button>
     <button className="btn btn-primary mx-1" onClick={convertLO}>Convert to lowerrcase</button>
+    <button className="btn btn-primary mx-1" onClick={handleCopy}>Copy Text</button>
   </div>
   <div className="container my-3">
     <h2>Your Text Summary</h2>
