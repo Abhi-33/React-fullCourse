@@ -1,4 +1,4 @@
-import React , {useState} from 'react'
+import React , {useState} from 'react';
 
 export default function TextForm(props) {
     //to uppercase
@@ -6,12 +6,14 @@ export default function TextForm(props) {
         // console.log('Uppercase Was Clicked' + " " +  Text);
         let newText = Text.toUpperCase();
         setText(newText)
+        props.showAlert("Converted to Uppercase" , "success");
     }
     //to lowercase
     const convertLO = ()=>{
         // console.log('Uppercase Was Clicked' + " " +  Text);
         let newText = Text.toLowerCase();
         setText(newText)
+        props.showAlert("Converted to Lowercase" , "success");
     }
 
     const convertonChange =(event)=>{
@@ -20,6 +22,7 @@ export default function TextForm(props) {
 
     const clearText = ()=>{
       setText('');
+      props.showAlert("Text Cleared" , "success");
     }
     const [Text, setText] = useState('Enter Text here : ');
     // Text = "New Text"; //Wrong way to Change the Text or state
