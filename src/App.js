@@ -24,11 +24,21 @@ function App() {
       setMode('dark');
       document.body.style.backgroundColor = '#212529';
       showAlert("Dark Mode Has Been Enabled" , "success");
+      document.title = 'TextUtils - Dark Mode';
+     
+      // Bad Practice - "Chapri Virus Websites Code"
+      // setInterval(() => {
+      //   document.title = 'TextUtils is Amazing';
+      // }, 2000);
+      // setInterval(() => {
+      //   document.title = 'Install TextUtils Now!';
+      // }, 1500);
     }
   else{
     setMode('light');
     document.body.style.backgroundColor = 'white';
     showAlert("Light Mode Has Been Enabled" , "success");
+    document.title = 'TextUtils - Light Mode';
   }
   }
   return (
